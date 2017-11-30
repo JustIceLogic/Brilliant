@@ -21,7 +21,7 @@ public ConnectionDB(){
         Class.forName("org.postgresql.Driver");
         String url = "jdbc:postgresql://"+host+":5432/BrilliantTec",
                 user = "postgres",
-                password="jorge123";
+                password="afif";
         connection = DriverManager.getConnection(url,user,password);
     } catch (SQLException sqle){
         logger.log(Level.SEVERE,sqle.toString(),sqle);
