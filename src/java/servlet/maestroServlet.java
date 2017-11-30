@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,9 @@ import objetos.maestro;
  *
  * @author ROGLOGIC
  */
-public class Servlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/maestro"})
+
+public class maestroServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -75,12 +78,18 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        maestro maestro1 = new maestro();
+        maestro1.setNombre(request.getParameter("nombre"));
+        maestro1.setApellidoP(request.getParameter("apellidoP"));
+        maestro1.setApellidoM(request.getParameter("apellidoM"));
+        maestro1.setId(request.getParameter("id"));        
         ConnectionDB connectionDB = new ConnectionDB();
         Connection connection = connectionDB.getConnectionDB();
         maestroDAO maestroDao= new maestroDAO(connection);
+        maestroDao.addUser(maestro1);
+
         getServletContext()
-                .getRequestDispatcher("/index.html")
+                .getRequestDispatcher("/Brilliant/index.html")
                 .forward(request, response);
     }
 

@@ -9,6 +9,7 @@ import objetos.maestro;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.sql.*;
+import javax.servlet.annotation.WebServlet;
 
 
 /**
@@ -33,7 +34,7 @@ public class maestroDAO {
     
     public void addUser (maestro maestro){
         try{
-            statement = connection.prepareStatement("INSERT INTO maestro VALUES(?,?,?,?)");
+            statement = connection.prepareStatement("INSERT INTO public.maestro VALUES(?,?,?,?)");
             synchronized(statement){
                 statement.setString(1,maestro.getNombre());
                 statement.setString(2,maestro.getApellidoP());
