@@ -35,9 +35,10 @@ public class claseDAO {
         try{
             statement = connection.prepareStatement("INSERT INTO clase VALUES(?,?,?,?)");
             synchronized(statement){
-                statement.setString(1,clase.getSalon());
+                statement.setString(1,clase.getNombre());
                 statement.setString(2,clase.getEdificio());
-                statement.setString(3,clase.getId());
+                statement.setString(3,clase.getSalon());
+                statement.setString(3,clase.getTopico());
                 statement.executeUpdate();
             }
             statement.close();

@@ -14,18 +14,21 @@ import java.io.Serializable;
   public class clase implements Serializable{
     private String nombre;
     private String edificio;
-    private String id;
-
+    private String salon;
+    private String topico;
+    
     public clase(){
     nombre="";
     edificio="";
-    id="";
+    salon="";
+    topico="";
     }
     
-    public clase(String nombre, String apellidoP, String apellidoM, String id){
+    public clase(String nombre, String salon, String edificio, String topico){
         this.nombre = nombre;
-        this.edificio = apellidoP;
-        this.id = id;
+        this.edificio = salon;
+        this.salon = salon;
+        this.topico = topico;
     }  
 
     /**
@@ -57,17 +60,31 @@ import java.io.Serializable;
     }
 
     /**
-     * @return the id
+     * @return the salon
      */
-    public String getId() {
-        return id;
+    public String getSalon() {
+        return salon;
     }
 
     /**
-     * @param id the id to set
+     * @param salon the salon to set
      */
-    public void setId(String id) {
-        this.id = id;
+    public void setSalon(String salon) {
+        this.salon = salon;
+    }
+    
+     /**
+     * @return the salon
+     */
+    public String getTopico() {
+        return topico;
+    }
+
+    /**
+     * @param salon the salon to set
+     */
+    public void setTopico(String topico) {
+        this.topico = topico;
     }
   }
 

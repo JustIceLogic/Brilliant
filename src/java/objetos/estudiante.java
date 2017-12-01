@@ -7,19 +7,21 @@ package objetos;
 import java.io.Serializable;
 /**
  *
- * @author ROGLOGIC
+ * @author Afuf
  */
 public class estudiante implements Serializable{
     private String nombre;
     private String apellidoP;
     private String apellidoM;
     private String id;
+   private String clase;
 
     public estudiante(){
     nombre="";
     apellidoP="";
     apellidoM="";
     id="";
+    clase="";
     }
     
     public estudiante(String nombre, String apellidoP, String apellidoM, String id){
@@ -27,6 +29,7 @@ public class estudiante implements Serializable{
         this.apellidoP = apellidoP;
         this.apellidoM = apellidoM;
         this.id = id;
+        this.clase = clase;
     }
 
     /**
@@ -84,6 +87,18 @@ public class estudiante implements Serializable{
     public void setId(String id) {
         this.id = id;
     }
-    
+    /**
+     * @return the clase
+     */
+    public String getClase() {
+        return clase;
+    }
+
+    /**
+     * @param clase the clase to set
+     */
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
 }
 

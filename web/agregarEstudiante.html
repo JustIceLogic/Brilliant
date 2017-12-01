@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+	<title>Agregar Estudiante</title>
+</head>
+<body>
+	<form action="/Brilliant/maestro" method="post">
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td><input name="nombre"></td>
+				<td>Apellido Paterno:</td>
+				<td><input name="apellidoP"></td>
+				<td>Apellido Materno:</td>
+				<td><input name="apellidoM"></td>
+			</tr>
+			<tr>
+				<td>Id:</td>
+				<td><input name="id"></td>
+			</tr>
+                        <tr>
+				<td>Clase Ciencia:</td>
+				<td><input list="clases" name="clase"> 
+                                 <datalist id="clases">
+                                   <option value="Matematicas 1">
+                                   <option value="Matematicas 2">
+                                   <option value="Matematicas 3">
+                                   <option value="Biologia">
+                                </datalist>   
+                                
+                                </td>
+			</tr>
+		</table>
+		<input type="submit" />
+	</form>
+</body>
+</html>
